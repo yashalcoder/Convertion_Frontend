@@ -23,42 +23,42 @@ export default function Navbar() {
     {
       id: 3,
       name: "Image Tools",
-      link: "/tools/imagetools",
+      link: "/tools",
       hasDropdown: true,
       dropdownItems: [
         {
           name: "JPG to PNG",
-          link: "/tools/jpg-to-png",
+          link: "/tools/imageTools/jpg-to-png",
           icon: <ArrowRight className="text-blue-500" size={16} />,
           description: "Convert JPG images to PNG format",
         },
         {
           name: "PNG to JPG",
-          link: "/tools/png-to-jpg",
+          link: "/tools/imageTools/png-to-jpg",
           icon: <ArrowRight className="text-green-500" size={16} />,
           description: "Convert PNG images to JPG format",
         },
         {
           name: "Image Resize",
-          link: "/tools/image-resize",
+          link: "/tools/imageTools/image-resize",
           icon: <ArrowRight className="text-orange-500" size={16} />,
           description: "Resize your images to any dimension",
         },
         {
           name: "Image Compress",
-          link: "/tools/image-compress",
+          link: "/tools/imageTools/image-compress",
           icon: <ArrowRight className="text-purple-500" size={16} />,
           description: "Reduce file size while maintaining quality",
         },
         {
           name: "Background Remove",
-          link: "/tools/background-remove",
+          link: "/tools/imageTools/background-remove",
           icon: <ArrowRight className="text-pink-500" size={16} />,
           description: "Remove background from images automatically",
         },
         {
           name: "Image Crop",
-          link: "/tools/image-crop",
+          link: "/tools/imageTools/image-crop",
           icon: <ArrowRight className="text-indigo-500" size={16} />,
           description: "Crop your images to perfect dimensions",
         },
@@ -72,37 +72,37 @@ export default function Navbar() {
       dropdownItems: [
         {
           name: "MP4 to AVI",
-          link: "/tools/mp4-to-avi",
+          link: "/tools/vedioTools/mp4-to-avi",
           icon: <ArrowRight className="text-red-500" size={16} />,
           description: "Convert MP4 videos to AVI format",
         },
         {
           name: "Video Compress",
-          link: "/tools/video-compress",
+          link: "/tools/vedioTools/video-compress",
           icon: <ArrowRight className="text-yellow-500" size={16} />,
           description: "Reduce video file size for easier sharing",
         },
         {
           name: "Video Trim",
-          link: "/tools/video-trim",
+          link: "/tools/vedioTools/video-trim",
           icon: <ArrowRight className="text-cyan-500" size={16} />,
           description: "Cut your videos to the perfect length",
         },
         {
           name: "Video Merge",
-          link: "/tools/video-merge",
+          link: "/tools/vedioTools/video-merge",
           icon: <ArrowRight className="text-emerald-500" size={16} />,
           description: "Combine multiple videos into one file",
         },
         {
           name: "Extract Audio",
-          link: "/tools/extract-audio",
+          link: "/tools/vedioTools/extract-audio",
           icon: <ArrowRight className="text-violet-500" size={16} />,
           description: "Extract audio tracks from your videos",
         },
         {
           name: "Add Subtitles",
-          link: "/tools/add-subtitles",
+          link: "/tools/vedioTools/add-subtitles",
           icon: <ArrowRight className="text-amber-500" size={16} />,
           description: "Add subtitles to your video files",
         },
@@ -226,12 +226,16 @@ export default function Navbar() {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <button className="px-4 py-2 bg-fuchsia-700 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-all duration-200 shadow-sm hover:shadow">
-              Sign Up
-            </button>
-            <button className="px-4 py-2 bg-blue-500 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-all duration-200 shadow-sm hover:shadow">
-              Log In
-            </button>
+            <Link href="/signup">
+              <button className="px-4 py-2 hover:cursor-pointer bg-fuchsia-700 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-all duration-200 shadow-sm hover:shadow">
+                Sign Up
+              </button>
+            </Link>
+            <Link href="/login">
+              <button className="px-4 py-2 hover:cursor-pointer bg-blue-500 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-all duration-200 shadow-sm hover:shadow">
+                Log In
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -305,13 +309,17 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <div className="pt-3 space-y-2 border-t border-gray-100">
-              <button className="w-full px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors duration-200">
-                Sign In
-              </button>
-              <button className="w-full px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:opacity-90 transition-all duration-200">
-                Login
-              </button>
+            <div className="pt-3 space-y-4 border-t border-gray-100">
+              <Link href="/signup">
+                <button className="w-full px-3 mb-2 py-2 text-sm cursor-pointer font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors duration-200">
+                  Sign Up
+                </button>
+              </Link>
+              <Link href="/login">
+                <button className="w-full px-3 py-2 cursor-pointer bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:opacity-90 transition-all duration-200">
+                  Login
+                </button>
+              </Link>
             </div>
           </div>
         </div>
